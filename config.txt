@@ -1,0 +1,58 @@
+{
+  "applications": {
+    "DEMO": {
+      "controlButtons": [
+        {
+          "title": "Reset players position",
+          "payload": {
+            "eventName": "resetPosition",
+            "parameters": {}
+          }
+        },
+        {
+          "title": "Reset coins count",
+          "payload": {
+            "eventName": "resetCoins",
+            "parameters": {
+              "count": 0
+            }
+          },
+          "context": ["coins"]
+        },
+        {
+          "title": "Spawn coins",
+          "requiresInput": true,
+          "inputPlaceholder": "Type here",
+          "payload": {
+            "eventName": "spawnCoins",
+            "parameters": {}
+          }
+        }
+      ],
+      "receivers": [
+        {
+          "coinsCollected":{
+            "maxHistory": 10
+          },
+          "event":{
+            "maxHistory": 5
+          },
+          "position":{
+            "maxHistory": 15
+          }
+        }
+      ],
+      "levels": [
+        {
+          "1": {
+            "url": "https://i.ibb.co/tPmk4cYY/DEMOmap.png",
+            "realWidth": 30,
+            "realHeight": 30,
+            "mapOffsetRotation": -90
+          }
+        }
+      ]
+    }
+  },
+  "min_free_memory_percentage": 20
+}
